@@ -1,0 +1,45 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/* fontawesome */
+/* line 10, ../sass/main.scss */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* line 22, ../sass/main.scss */
+body {
+  margin: 0;
+  padding: 1em;
+}
+
+/* line 27, ../sass/main.scss */
+span.strength {
+  color: #FFF;
+  float: left;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0px 5px;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 40, ../sass/main.scss */
+.W {
+  background: #e74c3c;
+}
+
+/* line 44, ../sass/main.scss */
+.M {
+  background: #f39c12;
+}
+
+/* line 48, ../sass/main.scss */
+.S {
+  background: #2ecc71;
+}
+
+/* line 52, ../sass/main.scss */
+.B {
+  background: #2ecc71;
+}

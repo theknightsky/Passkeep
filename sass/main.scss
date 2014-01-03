@@ -1,0 +1,55 @@
+//---- MAIN STYLES ----//
+
+@import "compass/css3";
+@import "susy";
+
+//---- FONTAWESOME ICONS ----//
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+//---- COLORS ----//
+
+$orange: #f39c12;
+$red: #e74c3c;
+$green: #2ecc71;
+
+
+
+body{
+	margin: 0;
+	padding: 1em;
+}
+
+span.strength{
+	color: #FFF;
+	float: left;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0px 5px;
+	font-size: 0.8em;
+	line-height: 1.5em;
+	text-align: center;
+	text-transform: uppercase;
+
+}
+
+.W{
+	background: $red;
+}
+
+.M{
+	background: $orange;
+}
+
+.S{
+	background: $green;
+}
+
+.B{
+	background: $green;
+}
+

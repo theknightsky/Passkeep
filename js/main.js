@@ -5,7 +5,7 @@ define(['config'], function(){
 		{
 			id: 01,
 			service: 'Phone Password',
-			password: 'phone-12345'
+			password: 'weak'
 		},
 		{
 			id: 02,
@@ -15,7 +15,7 @@ define(['config'], function(){
 		{
 			id: 03,
 			service: 'Computer Password',
-			password: 'computer-12345'
+			password: 'computer-123456789'
 		}
 		]);
 
@@ -24,7 +24,7 @@ define(['config'], function(){
 		passwordList.add({
 			id: passwordList.at(passwordList.length)+1,
 			service: 'New Service',
-			password: 'New Service-12345'
+			password: 'NewServicePassword-12345'
 		});
 		passwordListView.render();
 		

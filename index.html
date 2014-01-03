@@ -3,17 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Passkeep</title>
+	<link rel="stylesheet" href="stylesheets/normalize.css">
+	<link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
 	<script id="password-data-template" type="text/x-handlebars-template">
+	<span class="strength {{strength}}">{{strength}}</span>
 	<strong>{{service}}</strong>: <span class="password">{{password}}</span>
-	<input type="submit" class="editButton" value="Edit">		
+	<button type="submit" class="editButton fontawesome-pencil"></button>	
 	</script>
 
 	<script id="password-edit-template" type="text/x-handlebars-template">
 	<input type="text" class="passTitleEdit" value="{{service}}">
 	<input type="text" class="passwordEdit" value="{{password}}">
-	<input type="submit" class="saveEdits" value="Save">
+	<button type="submit" class="saveEdits fontawesome-save"></button>
 	</script>
 	
 	<div class="passwordContainer"></div>
