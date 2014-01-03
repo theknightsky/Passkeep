@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Passkeep</title>
+</head>
+<body>
+	<script id="password-data-template" type="text/x-handlebars-template">
+	<h1 class="passtitle">{{service}}</h1>
+	<span class="password">{{password}}</span>		
+	</script>
+
+	<script id="password-edit-template" type="text/x-handlebars-template">
+	<input type="text" class="passTitleEdit" value="{{service}}">
+	<input type="text" class="passwordEdit" value="{{password}}">
+	<input type="submit" value="Save">
+	</script>
+	<div class="passwordContainer"></div>
+
+<script src="js/libs/require.js" data-main="js/main"></script>
+</body>
+</html>
