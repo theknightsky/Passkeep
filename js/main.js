@@ -20,6 +20,13 @@ define(['config'], function(){
 		]);
 
 		var passwordListView = new PasswordListView({collection: passwordList});
+
+		passwordList.add({
+			id: passwordList.at(passwordList.length)+1,
+			service: 'New Service',
+			password: 'New Service-12345'
+		});
+		passwordListView.render();
 		
 	});
 });

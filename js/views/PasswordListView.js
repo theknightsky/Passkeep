@@ -12,6 +12,7 @@ var PasswordListView = Backbone.View.extend({
 		this.render();
 	},
 	render: function(){
+		this.$el.empty();
 		this.collection.each(function(passwordModel){
 			var passwordView = new PasswordView({model: passwordModel});
 			this.$el.append(passwordView.render().el);
