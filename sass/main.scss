@@ -13,9 +13,10 @@
 
 //---- COLORS ----//
 
-$orange: #f39c12;
+$orange: #f1c40f;
 $red: #e74c3c;
 $green: #2ecc71;
+$asphalt: #34495e;
 
 
 
@@ -25,7 +26,7 @@ body{
 }
 
 span.strength{
-	color: #FFF;
+	background: $asphalt;
 	float: left;
 	width: 1.5em;
 	height: 1.5em;
@@ -35,21 +36,19 @@ span.strength{
 	text-align: center;
 	text-transform: uppercase;
 
+	@include border-radius(2px)
+
 }
 
 .W{
-	background: $red;
+	color: lighten($red, 10%);
 }
 
 .M{
-	background: $orange;
+	color: lighten($orange, 10%);
 }
 
-.S{
-	background: $green;
-}
-
-.B{
-	background: $green;
+.S, .B{
+	color: lighten($green, 10%);
 }
 
