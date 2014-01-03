@@ -6,14 +6,14 @@
 </head>
 <body>
 	<script id="password-data-template" type="text/x-handlebars-template">
-	<h1 class="passtitle">{{service}}</h1>
-	<span class="password">{{password}}</span>		
+	<strong>{{service}}</strong>: <span class="password">{{password}}</span>
+	<input type="submit" class="editButton" value="Edit">		
 	</script>
 
 	<script id="password-edit-template" type="text/x-handlebars-template">
 	<input type="text" class="passTitleEdit" value="{{service}}">
 	<input type="text" class="passwordEdit" value="{{password}}">
-	<input type="submit" value="Save">
+	<input type="submit" class="saveEdits" value="Save">
 	</script>
 	<div class="passwordContainer"></div>
 

@@ -6,7 +6,9 @@ require.config({
 		'backbone': 'libs/backbone',
 		'handlebars': 'libs/handlebars',
 		'PasswordModel': 'models/PasswordModel',
+		'PasswordList': 'models/PasswordList',
 		'PasswordView': 'views/PasswordView',
+		'PasswordListView': 'views/PasswordListView',
 		'EditView': 'views/EditView'
 	},
 	shim: {
