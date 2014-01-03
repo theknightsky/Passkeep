@@ -47,7 +47,7 @@ var PasswordView = Backbone.View.extend({
 	},
 	render: function(){
 		this.checkStrength();
-
+		
 		this.$el.html(this.template(this.model.toJSON()));
 
 		return this;
