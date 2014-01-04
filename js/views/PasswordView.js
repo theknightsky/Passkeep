@@ -12,7 +12,8 @@ var PasswordView = Backbone.View.extend({
 	},
 	events: {
 		"click .editButton": "renderEdit",
-		"click .saveEdits": "saveEdits"
+		"click .saveEdits": "saveEdits",
+		"click .cancelEdits": "cancelEdits"
 	},
 	renderEdit: function(){
 		var _this = this;
@@ -29,6 +30,10 @@ var PasswordView = Backbone.View.extend({
 			password: this.$el.find('.passwordEdit').val()
 		});
 
+		this.render();
+	},
+	cancelEdits: function(e){
+		e.preventDefault();
 		this.render();
 	},
 	checkStrength: function(){

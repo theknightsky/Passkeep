@@ -3,6 +3,12 @@
 @import "compass/css3";
 @import "susy";
 
+$total-columns: 4;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+$container-style: fluid;
+
 //---- FONTAWESOME ICONS ----//
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
@@ -11,44 +17,172 @@
   font-family: 'FontAwesome', sans-serif;
 }
 
-//---- COLORS ----//
+//---- Source Sans Pro ----//
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
 
+//---- COLORS ----//
+$white: #ecf0f1;
+$light-gray: #bdc3c7;
 $orange: #f1c40f;
 $red: #e74c3c;
 $green: #2ecc71;
+$dark-green: #27ae60;
 $asphalt: #34495e;
-
-
+$midnight: #2c3e50;
+$turquoise: #1abc9c;
+$dark-turquoise: #16a085;
+$purple: #9b59b6;
 
 body{
 	margin: 0;
-	padding: 1em;
+	padding: 0;
+	font-family: 'Source Sans Pro';
+	background: darken($white, 5%);
+}
+
+nav{
+	height: 50px;
+	padding: 5px 0;
+	background: $asphalt;
+
+	.logo-toggle{
+		max-height: 50px;
+	}
+}
+
+.container{
+	@include container;
+	// @include susy-grid-background;
+}
+
+.btn{
+	width: 50px;
+	height: 50px;
+	border: none;
+	line-height: 50px;
+	font-size: 1.5em;
+	outline-color: $green;
+	background: $midnight;
+	color: lighten($asphalt, 10%);
+
+	@include transition(all 0.2s ease);
+
+	&:hover{
+		background: $turquoise;
+		color: #fff;
+	}
+
+	&.btn-block{
+		color: #fff;
+		font-size: 1em;
+		background: $green;
+		@include span-columns(2 omega, 4);
+	}
+}
+
+.passwordView {
+	background: #fff;
+	padding: 0;
+	margin: 1em 0;
+	position: relative;
+	border-bottom: 3px solid #ccc;
+
+	@include box-shadow(-0px -0px 2px #bbb);
+
+	input{
+		width: 100%;
+		padding: 0.5em 0;
+		margin: 0.5em 0;
+		border: none;
+		color: #fff;
+		text-indent: 1em;
+		outline-color: $green;
+		background: lighten($asphalt, 10%);
+
+	}
+
+	.service{
+		font-size: 1.5em;
+	}
+	
+	.password{
+		font-size: 1.5em;
+		&.W{border-bottom: 3px solid $red;}
+		&.M{border-bottom: 3px solid $orange;}
+		&.S{border-bottom: 3px solid $green;}
+		&.B{border-bottom: 3px solid $purple;}
+	}
+
+	.passwordInfo{
+		padding-top: 3em;
+		@include container;
+	}
+
+	.passwordActions{
+		height: 50px;
+		background:$asphalt;
+		@include span-columns($total-columns);
+	}
+
+	.passwordInputs{
+		padding: 1em;
+		font-size: 1.5em;
+
+		@include container;
+	}
+
 }
 
 span.strength{
-	background: $asphalt;
-	float: left;
-	width: 1.5em;
-	height: 1.5em;
-	margin: 0px 5px;
-	font-size: 0.8em;
-	line-height: 1.5em;
+	width: 2em;
+	height: 2em;
+	color: #fff;
+	top: -0.2em;
+	right: 0.5em;
+	display: block;
+	line-height: 2em;
+	font-size: 1.2em;
 	text-align: center;
-	text-transform: uppercase;
+	position: absolute;
 
-	@include border-radius(2px)
+	@include border-radius(3px 3px 0 0);
 
+	&:after{
+		content: '';
+		top: 100%;
+		left: 0;
+		width: 0;
+		height: 0;
+		position: absolute;
+		border-top: 0.5em solid;
+		border-left: 1em solid transparent;
+		border-right: 1em solid transparent;
+
+	}
+
+	&.W{background: $red;
+		&:after{border-top-color: $red}
+	}
+	&.M{background: $orange;
+		&:after{border-top-color: $orange}
+	}
+	&.S{background: $green;
+		&:after{border-top-color: $green}
+	}
+	&.B{background: $purple;
+		&:after{border-top-color: $purple}
+	}
 }
 
-.W{
-	color: lighten($red, 10%);
-}
 
-.M{
-	color: lighten($orange, 10%);
+@include at-breakpoint(40em 8){
+	$total-columns: 8;
+	$container-style: magic;
+	.container{
+		@include container;
+		// @include susy-grid-background;
+	}
+	.btn{
+		@include span-columns(1, 8);
+	}
 }
-
-.S, .B{
-	color: lighten($green, 10%);
-}
-

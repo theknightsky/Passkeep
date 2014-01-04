@@ -7,19 +7,41 @@
 	<link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
+	<nav>
+		<img class="logo-toggle" src="img/logo-toggle.png" alt="Passkeep">
+	</nav>
+<div class="container">
 	<script id="password-data-template" type="text/x-handlebars-template">
-	<span class="strength {{strength}}">{{strength}}</span>
-	<strong>{{service}}</strong>: <span class="password">{{password}}</span>
-	<button type="submit" class="editButton fontawesome-pencil"></button>	
+	<div class="passwordView">
+		<div class="passwordActions">
+			<span class="strength {{strength}}">{{strength}}</span>
+			<button type="submit" class="btn editButton fontawesome-pencil"></button>	
+		</div>
+		<div class="passwordInfo">
+			<h3 class="service">{{service}}</h3>
+			<p class="password {{strength}}">{{password}}</p>
+		</div>
+	</div>
 	</script>
-
 	<script id="password-edit-template" type="text/x-handlebars-template">
-	<input type="text" class="passTitleEdit" value="{{service}}"><br>
-	<input type="text" class="passwordEdit" value="{{password}}">
-	<button type="submit" class="saveEdits fontawesome-save"></button>
+	<div class="passwordView editView">
+
+		<div class="passwordActions">
+			<span class="strength {{strength}}">{{strength}}</span>
+			<button type="submit" class="btn cancelEdits fontawesome-remove"></button>
+		</div>
+
+		<div class="passwordInputs">
+			<input type="text" class="passTitleEdit" value="{{service}}"><br>
+			<input type="text" class="passwordEdit" value="{{password}}">
+			<button type="submit" class="btn btn-block saveEdits fontawesome-save"> Save</button>
+		</div>
+	</div>
 	</script>
 	
 	<div class="passwordContainer"></div>
+
+</div>
 
 <script src="js/libs/require.js" data-main="js/main"></script>
 </body>

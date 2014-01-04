@@ -4,17 +4,17 @@ define(['config'], function(){
 		var passwordList = new PasswordList([
 		{
 			id: 01,
-			service: 'Phone Password',
+			service: 'Gmail',
 			password: 'weak'
 		},
 		{
 			id: 02,
-			service: 'Tablet Password',
+			service: 'Zions Bank',
 			password: 'tablet-12345'
 		},
 		{
 			id: 03,
-			service: 'Computer Password',
+			service: 'Apartment Rent Password',
 			password: 'computer-123456789'
 		}
 		]);
