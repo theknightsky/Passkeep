@@ -21,29 +21,28 @@ $container-style: fluid;
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
 
 //---- COLORS ----//
-$white: #ecf0f1;
+$white: darken(#ecf0f1, 3%);
 $light-gray: #bdc3c7;
-$orange: #f1c40f;
+$yellow: #f1c40f;
 $red: #e74c3c;
 $green: #2ecc71;
 $dark-green: #27ae60;
-$asphalt: #34495e;
-$midnight: #2c3e50;
+$black: #333;
+$midnight: darken($black, 10%);
 $turquoise: #1abc9c;
 $dark-turquoise: #16a085;
 $purple: #9b59b6;
 
 body{
-	margin: 0;
 	padding: 0;
 	font-family: 'Source Sans Pro';
-	background: darken($white, 5%);
+	background: $white;
 }
 
 nav{
 	height: 50px;
 	padding: 5px 0;
-	background: $asphalt;
+	background: $black;
 
 	.logo-toggle{
 		max-height: 50px;
@@ -62,21 +61,39 @@ nav{
 	line-height: 50px;
 	font-size: 1.5em;
 	outline-color: $green;
-	background: $midnight;
-	color: lighten($asphalt, 10%);
 
-	@include transition(all 0.2s ease);
 
-	&:hover{
-		background: $turquoise;
-		color: #fff;
+
+	&.btn-action{
+		float: left;
+		margin: 0;
+		background: $black;
+		color: lighten($black, 20%);
+		outline: none;
+
+		&:hover{
+			color: $white;
+			// background: $midnight;
+		}
+		&.yellow{
+			&:hover{color: $yellow;}
+		}
+		&.red{
+			&:hover{color: $red;}
+		}
 	}
+	&.btn-save{
+		background: $green;
 
+		&:hover{
+			background: $dark-green;
+		}
+	}
 	&.btn-block{
 		color: #fff;
 		font-size: 1em;
-		background: $green;
-		@include span-columns(2 omega, 4);
+		@include span-columns($total-columns);
+		@include border-radius(2px);
 	}
 }
 
@@ -87,17 +104,19 @@ nav{
 	position: relative;
 	border-bottom: 3px solid #ccc;
 
-	@include box-shadow(-0px -0px 2px #bbb);
+	@include box-shadow(-0px -0px 5px #999);
 
 	input{
 		width: 100%;
 		padding: 0.5em 0;
 		margin: 0.5em 0;
 		border: none;
-		color: #fff;
-		text-indent: 1em;
+		color: $turquoise;
+		text-indent: 0.5em;
 		outline-color: $green;
-		background: lighten($asphalt, 10%);
+		background: lighten($black, 5%);
+
+		@include border-radius(2px);
 
 	}
 
@@ -105,27 +124,61 @@ nav{
 		font-size: 1.5em;
 	}
 	
+	.strength-bar{
+		color: #FFF;
+		height: 20px;
+		margin: 1.5em 0;
+		overflow: hidden;
+		line-height: 20px;
+		background: darken($white, 2%);
+		text-align: center;
+		text-transform: uppercase;
+
+		.Weak{
+			background: $red; 
+			width: 25%;
+		}
+		.Medium{
+			background: $yellow;
+			width: 50%;
+		}
+		.Strong{
+			background: $green; 
+			width: 75%;
+		}
+		.Best{
+			background: $purple;
+			 width: 100%;
+		}
+	}
+
 	.password{
-		font-size: 1.5em;
-		&.W{border-bottom: 3px solid $red;}
-		&.M{border-bottom: 3px solid $orange;}
-		&.S{border-bottom: 3px solid $green;}
-		&.B{border-bottom: 3px solid $purple;}
+		background: $black;
+		color: $turquoise;
+		padding: 15px;
+		font-size: 1.2em;
+		font-family: 'Courier New';
+		border-left: 5px solid lighten($black, 15%);
+
+		@include transition(all 0.2s ease-in);
 	}
 
 	.passwordInfo{
 		padding-top: 3em;
 		@include container;
+
+		h3{margin-bottom: 0.3em}
 	}
 
 	.passwordActions{
 		height: 50px;
-		background:$asphalt;
+		background:$black;
 		@include span-columns($total-columns);
+		@include box-shadow(inset 0px -2px 2px $midnight);
 	}
 
 	.passwordInputs{
-		padding: 1em;
+		padding: 3em 0 1em 0;
 		font-size: 1.5em;
 
 		@include container;
@@ -160,16 +213,16 @@ span.strength{
 
 	}
 
-	&.W{background: $red;
+	&.Weak{background: $red;
 		&:after{border-top-color: $red}
 	}
-	&.M{background: $orange;
-		&:after{border-top-color: $orange}
+	&.Medium{background: $yellow;
+		&:after{border-top-color: $yellow}
 	}
-	&.S{background: $green;
+	&.Strong{background: $green;
 		&:after{border-top-color: $green}
 	}
-	&.B{background: $purple;
+	&.Best{background: $purple;
 		&:after{border-top-color: $purple}
 	}
 }
@@ -183,6 +236,11 @@ span.strength{
 		// @include susy-grid-background;
 	}
 	.btn{
-		@include span-columns(1, 8);
+		// &.btn-action{
+		// 	@include span-columns(1, 8);
+		// }
+		&.btn-block{
+					@include span-columns(1 omega, 4);
+		}
 	}
 }

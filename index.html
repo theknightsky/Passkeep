@@ -7,19 +7,23 @@
 	<link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
-	<nav>
-		<img class="logo-toggle" src="img/logo-toggle.png" alt="Passkeep">
-	</nav>
+	
+<nav>
+	<img class="logo-toggle" src="img/logo-toggle.png" alt="Passkeep">
+</nav>
+
 <div class="container">
 	<script id="password-data-template" type="text/x-handlebars-template">
 	<div class="passwordView">
 		<div class="passwordActions">
-			<span class="strength {{strength}}">{{strength}}</span>
-			<button type="submit" class="btn editButton fontawesome-pencil"></button>	
+			<span class="strength {{strength}}">{{getFirstChar strength}}</span>
+			<button type="button" class="btn btn-action editButton fontawesome-pencil yellow"></button>
+			<button type="button" class="btn btn-action showPassword {{#unless visible}}fontawesome-eye-open{{else}}fontawesome-eye-close{{/unless}}"></button>	
 		</div>
 		<div class="passwordInfo">
 			<h3 class="service">{{service}}</h3>
-			<p class="password {{strength}}">{{password}}</p>
+			{{#if visible}}<p class="password">Password: {{password}}</p>{{/if}}
+			<div class="strength-bar"><div class="{{strength}}">{{strength}}</div></div>
 		</div>
 	</div>
 	</script>
@@ -27,14 +31,14 @@
 	<div class="passwordView editView">
 
 		<div class="passwordActions">
-			<span class="strength {{strength}}">{{strength}}</span>
-			<button type="submit" class="btn cancelEdits fontawesome-remove"></button>
+			<span class="strength {{strength}}">{{getFirstChar strength}}</span>
+			<button type="button" class="btn btn-action cancelEdits fontawesome-remove red"></button>
 		</div>
 
 		<div class="passwordInputs">
-			<input type="text" class="passTitleEdit" value="{{service}}"><br>
+			<input type="text" class="passTitleEdit" value="{{service}}">
 			<input type="text" class="passwordEdit" value="{{password}}">
-			<button type="submit" class="btn btn-block saveEdits fontawesome-save"> Save</button>
+			<button type="submit" class="btn btn-block btn-save saveEdits fontawesome-save"> Save</button>
 		</div>
 	</div>
 	</script>

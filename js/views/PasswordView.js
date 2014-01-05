@@ -10,11 +10,15 @@ var PasswordView = Backbone.View.extend({
 	initialize: function(){
 		this.render();
 	},
+
 	events: {
-		"click .editButton": "renderEdit",
-		"click .saveEdits": "saveEdits",
-		"click .cancelEdits": "cancelEdits"
+		'click .editButton': 'renderEdit',
+		'click .saveEdits': 'saveEdits',
+		'click .cancelEdits': 'cancelEdits',
+		'click .showPassword': 'showPassword',
+		'keydown': 'keyDown'
 	},
+
 	renderEdit: function(){
 		var _this = this;
 		require(['EditView'], function(EditView){
@@ -22,36 +26,44 @@ var PasswordView = Backbone.View.extend({
 			_this.$el.html(editView.render().el);
 		});
 	},
+
 	saveEdits: function(e){
 		e.preventDefault();
 
 		this.model.set({
 			service: this.$el.find('.passTitleEdit').val(),
-			password: this.$el.find('.passwordEdit').val()
+			password: this.$el.find('.passwordEdit').val(),
+			visible: false
 		});
+		this.model.checkStrength();
 
 		this.render();
 	},
+
 	cancelEdits: function(e){
 		e.preventDefault();
 		this.render();
 	},
-	checkStrength: function(){
-		var cm = this.model,
-			pwlength = cm.get('password').length;
 
-		if(pwlength < 8){
-			cm.set('strength', 'W');
-		}else if(pwlength >= 8 && pwlength < 14){
-			cm.set('strength', 'M');
-		}else if(pwlength >= 14 && pwlength < 20){
-			cm.set('strength', 'S');
-		}else if(pwlength >= 20){
-			cm.set('strength', 'B');
+	showPassword: function(e){
+		e.preventDefault();
+		var cm = this.model;
+		if(cm.get('visible') == false){
+			cm.set('visible', true);
+		}else{
+			this.passwordVisible = false;
+			cm.set('visible', false);
+		}
+		this.render();
+	},
+
+	keyDown: function(e){
+		if(e.keyCode === 13){
+			this.saveEdits(e);
 		}
 	},
+
 	render: function(){
-		this.checkStrength();
 		
 		this.$el.html(this.template(this.model.toJSON()));
 

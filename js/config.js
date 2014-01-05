@@ -9,7 +9,8 @@ require.config({
 		'PasswordList': 'models/PasswordList',
 		'PasswordView': 'views/PasswordView',
 		'PasswordListView': 'views/PasswordListView',
-		'EditView': 'views/EditView'
+		'EditView': 'views/EditView',
+		'strength-minified': 'handlebar-helpers/strength-one-letter'
 	},
 	shim: {
 		'backbone': {
