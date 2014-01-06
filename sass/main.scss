@@ -40,9 +40,14 @@ body{
 }
 
 nav{
+	top: 0;
+	left: 0;
+	right: 0;
 	height: 50px;
 	padding: 5px 0;
 	background: $black;
+	position: fixed;
+	z-index: 9999;
 
 	.logo-toggle{
 		max-height: 50px;
@@ -50,8 +55,46 @@ nav{
 }
 
 .container{
+	padding-top: 4em;
 	@include container;
 	// @include susy-grid-background;
+}
+
+#superbar{
+	height: 50px;
+	padding: 0em;
+	background: $black;
+	margin: 3em 0 4em 0;
+	position: relative;
+
+	@include box-shadow(-0px -0px 3px #999);
+	// @include box-shadow(-0px 4px 0px 0px $turquoise);
+
+	#inputCreate{
+		height: 40px;
+		border: none;
+		padding: 5px 0em;
+		text-indent: 1em;
+		background: $black;
+		color: $white;
+		outline-color: $black;
+		@include span-columns($total-columns);
+	}
+
+	.btn-container{
+		top: 0;
+		right: 0;
+		position: absolute;
+
+		&:after{
+			content: '';
+			top: 20%;
+			left: 0;
+			height: 60%;
+			position: absolute;
+			border-right: 1px solid lighten($black, 20%);
+		}
+	}
 }
 
 .btn{
@@ -59,7 +102,7 @@ nav{
 	height: 50px;
 	border: none;
 	line-height: 50px;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	outline-color: $green;
 
 
@@ -81,6 +124,12 @@ nav{
 		&.red{
 			&:hover{color: $red;}
 		}
+		&.turquoise{
+			&:hover{color: $turquoise;}
+		}
+		&.green{
+			&:hover{color: $green;}
+		}
 	}
 	&.btn-save{
 		background: $green;
@@ -100,7 +149,7 @@ nav{
 .passwordView {
 	background: #fff;
 	padding: 0;
-	margin: 1em 0;
+	margin: 3em 0;
 	position: relative;
 	border-bottom: 3px solid #ccc;
 
@@ -121,7 +170,7 @@ nav{
 	}
 
 	.service{
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 	
 	.strength-bar{
@@ -172,6 +221,7 @@ nav{
 
 	.passwordActions{
 		height: 50px;
+		padding-bottom: 3px;
 		background:$black;
 		@include span-columns($total-columns);
 		@include box-shadow(inset 0px -2px 2px $midnight);
@@ -186,7 +236,7 @@ nav{
 
 }
 
-span.strength{
+span.strength-ribbon{
 	width: 2em;
 	height: 2em;
 	color: #fff;
@@ -227,6 +277,7 @@ span.strength{
 	}
 }
 
+//---- BREAKPOINT 40em 8 columns ----//
 
 @include at-breakpoint(40em 8){
 	$total-columns: 8;
@@ -241,6 +292,12 @@ span.strength{
 		// }
 		&.btn-block{
 					@include span-columns(1 omega, 4);
+		}
+	}
+
+	.passwordView{
+		.service{
+			font-size: 1.5em;
 		}
 	}
 }
