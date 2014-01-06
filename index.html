@@ -14,14 +14,23 @@
 
 <div class="container">
 
-	<script id="password-create-template" type="text/x-handlebars-template">
-		<input id="inputCreate" type="text" placeholder="Create or Search">
-		<div class="btn-container">
-		<button type="button" id="createPassword" class="btn btn-action fontawesome-plus green"></button>
-		<button type="button" id="searchPassword" class="btn btn-action fontawesome-search turquoise"></button>
+	<script id="password-search-template" type="text/x-handlebars-template">
+		<input type="text" id="inputCreate" class="superInput" placeholder="Find an existing password">
+		<div class="btn-container actions">
+		<button type="button" id="searchButton" class="btn btn-action btn-search fontawesome-search"></button>
+		<button type="button" id="startCreate" class="btn btn-action btn-add fontawesome-plus"></button>
 		</div>
 	</script>
-	<div id="superbar"></div>
+
+	<script id="password-create-template" type="text/x-handlebars-template">
+		<input type="text" id="inputTitle" class="superInput" placeholder="Service title">
+		<input type="text" id="inputPassword" class="superInput" placeholder="Password">
+		<div class="btn-container btn-submit">
+			<button type="submit" id="createButton" class="btn btn-create fontawesome-save"> Save</button>
+		</div>
+	</script>
+
+	<div id="superbar" class="small"></div>
 
 	<script id="password-data-template" type="text/x-handlebars-template">
 	<div class="passwordView">

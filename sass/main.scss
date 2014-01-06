@@ -61,38 +61,79 @@ nav{
 }
 
 #superbar{
-	height: 50px;
 	padding: 0em;
 	background: $black;
-	margin: 3em 0 4em 0;
 	position: relative;
 
 	@include box-shadow(-0px -0px 3px #999);
-	// @include box-shadow(-0px 4px 0px 0px $turquoise);
 
-	#inputCreate{
+	&.small{
+		height: 50px;
+		margin: 3em 0 4em 0;
+	}
+
+	&.big{
+		height: 100px;
+		margin: 3em 0 4em 0;
+
+		.btn-create{
+			background: $dark-green;
+			color: #fff;
+
+			@include span-columns($total-columns);
+		}
+
+		#inputTitle{
+			font-weight: bold;
+			font-size: 1.2em;
+			text-indent: 0.8em;
+		}
+	}
+
+	.superInput{
 		height: 40px;
 		border: none;
 		padding: 5px 0em;
 		text-indent: 1em;
 		background: $black;
 		color: $white;
-		outline-color: $black;
+		outline-color: $dark-green;
 		@include span-columns($total-columns);
+
 	}
 
 	.btn-container{
-		top: 0;
-		right: 0;
-		position: absolute;
 
-		&:after{
+		&.actions{
+			top: 0;
+			right: 0;
+			position: absolute;
+
+			&:after{
 			content: '';
 			top: 20%;
 			left: 0;
 			height: 60%;
 			position: absolute;
 			border-right: 1px solid lighten($black, 20%);
+			}
+		}
+
+		.btn-search{
+			height: 46px;
+			margin: 2px 0;
+			line-height: 40px;
+			&:hover{
+				color: $dark-green;
+			}
+			&.green{
+				color: $dark-green;
+			}
+		}
+
+		.btn-add{
+			background: $dark-green;
+			color: #fff;
 		}
 	}
 }

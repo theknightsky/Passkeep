@@ -7,7 +7,6 @@ define(['backbone'], function(Backbone){
 
 var PasswordModel = Backbone.Model.extend({
 	defaults: {
-		id: 0,
 		service: 'Service Name',
 		password: 'xxxx',
 		visible: false

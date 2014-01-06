@@ -2,15 +2,20 @@ define(['backbone', 'handlebars','PasswordList','PasswordListView','allPasswords
 
 	var superBarView = Backbone.View.extend({
 		el: '#superbar',
-		
-		template: Handlebars.default.compile($('#password-create-template').html()),
+
+		className: 'small',
+
+		searchTemplate: Handlebars.default.compile($('#password-search-template').html()),
+		createTemplate: Handlebars.default.compile($('#password-create-template').html()),
 
 		initialize: function(){
-			this.render();
+			this.renderSearch();
 		},
 
 		events: {
-			'click #searchPassword': 'loadResult',
+			'click #searchButton': 'loadResult',
+			'click #startCreate': 'renderCreate',
+			'click #createButton': 'createPassword',
 			'keyup': 'keyUp'
 		},
 
@@ -56,7 +61,7 @@ define(['backbone', 'handlebars','PasswordList','PasswordListView','allPasswords
 
 			if(this.searchResult.length == 0){
 				var message = "No matching passwords found";
-				return message;
+				console.log(message);
 			}else{
 				var searchResultList = new PasswordList(this.searchResult);
 				searchResultList.comparator = function(password){
@@ -69,20 +74,51 @@ define(['backbone', 'handlebars','PasswordList','PasswordListView','allPasswords
 
 		},
 
+		createPassword: function(e){
+			allPasswords.add({
+			id: allPasswords.length+2,
+			service: this.$el.find('#inputTitle').val(),
+			password: this.$el.find('#inputPassword').val()
+			});
+
+			console.log(allPasswords);
+			var passwordListView = new PasswordListView({collection: allPasswords});
+			this.renderSearch();
+		},
+
 		keyUp: function(e){
+
 			e.preventDefault();
+
+			var searchButton = this.$el.find('#searchPassword');
 			var searchValue = this.$el.find('#inputCreate').val();
 
-			if(e.keyCode === 13){
-				this.loadResult(e);
-			}else if(searchValue == ''){
-				var passwordListView = new PasswordListView({collection: allPasswords});
+			searchButton.addClass('green');
+
+
+			if($(document.activeElement).attr('id') == 'inputCreate'){
+				if(e.keyCode === 13){
+					this.loadResult(e);
+				}else if(searchValue == ''){
+					var passwordListView = new PasswordListView({collection: allPasswords});
+					searchButton.removeClass('green');
+				}
+			}else if($(document.activeElement).attr('id') == 'inputTitle' || $(document.activeElement).attr('id') == 'inputPassword'){
+				if(e.keyCode === 13){
+					this.createPassword();
+				}
 			}
 
 		},
 
-		render: function(){
-			this.$el.html(this.template(this.collection.toJSON()));
+		renderSearch: function(){
+			this.$el.removeClass().addClass('small');
+			this.$el.html(this.searchTemplate(this.collection.toJSON()));
+		},
+
+		renderCreate: function(){
+			this.$el.removeClass().addClass('big');
+			this.$el.html(this.createTemplate(this.collection.toJSON()));
 		}
 	});
 

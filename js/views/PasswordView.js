@@ -47,9 +47,11 @@ var PasswordView = Backbone.View.extend({
 
 	showPassword: function(e){
 		e.preventDefault();
-		var cm = this.model;
+		var cm = this.model,
+			date = new Date();
 		if(cm.get('visible') == false){
 			cm.set('visible', true);
+			console.log('\"'+cm.get('service')+'\" password viewed on '+(date.getMonth()+1)+'/'+date.getDate()+'/'+date.getFullYear());
 		}else{
 			this.passwordVisible = false;
 			cm.set('visible', false);
