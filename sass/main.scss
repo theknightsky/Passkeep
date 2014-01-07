@@ -29,8 +29,8 @@ $green: #2ecc71;
 $dark-green: #27ae60;
 $black: #333;
 $midnight: darken($black, 10%);
-$turquoise: #1abc9c;
-$dark-turquoise: #16a085;
+$teal: #1abc9c;
+$dark-teal: #16a085;
 $purple: #9b59b6;
 
 body{
@@ -60,49 +60,43 @@ nav{
 	// @include susy-grid-background;
 }
 
+#superbarContainer{
+	padding: 3em 0 2em 0;
+	border-bottom: 1px dashed #ccc;
+	
+}
+
+#superAlert{
+	color: #999;
+	margin: 2em 1em 0 1em;
+	padding: 0px 1em;
+	text-align: center;
+	visibility: hidden;
+
+	@include transition(all 0.3s ease-in);
+}
+
 #superbar{
-	padding: 0em;
 	background: $black;
 	position: relative;
+
+	// &:after{
+	// 	content: '';
+	// 	display: block;
+	// 	position: absolute;
+	// 	width: 100%;
+	// 	top: 150%;
+	// 	left: 0;
+	// 	right: 0;
+	// 	border-bottom: 1px dashed #ccc;
+	// }
 
 	@include box-shadow(-0px -0px 3px #999);
 
 	&.small{
 		height: 50px;
-		margin: 3em 0 4em 0;
-	}
 
-	&.big{
-		height: 100px;
-		margin: 3em 0 4em 0;
-
-		.btn-create{
-			background: $dark-green;
-			color: #fff;
-
-			@include span-columns($total-columns);
-		}
-
-		#inputTitle{
-			font-weight: bold;
-			font-size: 1.2em;
-			text-indent: 0.8em;
-		}
-	}
-
-	.superInput{
-		height: 40px;
-		border: none;
-		padding: 5px 0em;
-		text-indent: 1em;
-		background: $black;
-		color: $white;
-		outline-color: $dark-green;
-		@include span-columns($total-columns);
-
-	}
-
-	.btn-container{
+		.btn-container{
 
 		&.actions{
 			top: 0;
@@ -132,9 +126,81 @@ nav{
 		}
 
 		.btn-add{
-			background: $dark-green;
+			background: $dark-teal;
 			color: #fff;
+
+			&:hover{
+				background: $teal;
+				color: darken($teal, 20%);
+			}
 		}
+	}
+	}
+
+	&.big{
+		height: 175px;
+		padding-top: 10px;
+
+		.btn-container{
+			@include span-columns($total-columns);
+
+			float: left;
+			display: block;
+			padding: 1em 0;
+			// border-top: 1px dashed lighten($black, 20%);
+		}
+
+		.btn-create{
+			@include span-columns(1 omega, 4);
+
+			color: #fff;
+			height: 40px;
+			background: $dark-teal;
+			line-height: 40px;
+			margin-right: 1em;
+
+			&:hover{
+				background: $teal;
+				color: darken($teal, 20%);
+			}
+
+
+		}
+
+		.btn-action{
+			width: 100px;
+			height: 40px;
+			margin: 0 1em;
+			line-height: 40px;
+			text-align: left;
+		}
+
+		#inputTitle{
+			font-weight: bold;
+			font-size: 1.4em;
+			text-indent: 0.8em;
+			position: relative;
+		}
+
+		#inputPassword{
+			font-family: 'Courier New';
+			color: $teal;
+			font-size: 1.2em;
+		}
+	}
+
+	.superInput{
+		height: 40px;
+		border: none;
+		padding: 5px 0em;
+		text-indent: 1em;
+		background: $black;
+		color: $white;
+		outline: 0;
+		// outline-color: $dark-green;
+		@include appearance(textfield);
+		@include span-columns($total-columns);
+
 	}
 }
 
@@ -165,48 +231,51 @@ nav{
 		&.red{
 			&:hover{color: $red;}
 		}
-		&.turquoise{
-			&:hover{color: $turquoise;}
+		&.teal{
+			&:hover{color: $teal;}
 		}
 		&.green{
 			&:hover{color: $green;}
 		}
 	}
 	&.btn-save{
-		background: $green;
+		background: $teal;
 
 		&:hover{
-			background: $dark-green;
+			background: darken($teal, 10%);
 		}
 	}
 	&.btn-block{
 		color: #fff;
 		font-size: 1em;
 		@include span-columns($total-columns);
-		@include border-radius(2px);
+		// @include border-radius(2px);
 	}
+}
+
+#passwordContainer{
+	margin-top: 3em;
 }
 
 .passwordView {
 	background: #fff;
-	padding: 0;
 	margin: 3em 0;
 	position: relative;
-	border-bottom: 3px solid #ccc;
+	border-bottom: 2px solid #ccc;
 
-	@include box-shadow(-0px -0px 5px #999);
+	@include box-shadow(-0px -0px 2px #999);
 
 	input{
 		width: 100%;
 		padding: 0.5em 0;
 		margin: 0.5em 0;
 		border: none;
-		color: $turquoise;
+		color: $teal;
 		text-indent: 0.5em;
 		outline-color: $green;
 		background: lighten($black, 5%);
 
-		@include border-radius(2px);
+		// @include border-radius(2px);
 
 	}
 
@@ -244,7 +313,7 @@ nav{
 
 	.password{
 		background: $black;
-		color: $turquoise;
+		color: $teal;
 		padding: 15px;
 		font-size: 1.2em;
 		font-family: 'Courier New';
@@ -265,6 +334,7 @@ nav{
 		padding-bottom: 3px;
 		background:$black;
 		@include span-columns($total-columns);
+		@include omega;
 		@include box-shadow(inset 0px -2px 2px $midnight);
 	}
 

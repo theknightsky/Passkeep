@@ -18,12 +18,12 @@ define(['PasswordList'], function(PasswordListView){
 		{
 			id: 04,
 			service: 'Amazon Password',
-			password: '12345'
+			password: 'amazon-12345678'
 		},
 		{
 			id: 05,
 			service: 'Google Password',
-			password: 'google-guy123'
+			password: 'google-guy12345'
 		}
 		]);
 

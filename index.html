@@ -23,14 +23,17 @@
 	</script>
 
 	<script id="password-create-template" type="text/x-handlebars-template">
-		<input type="text" id="inputTitle" class="superInput" placeholder="Service title">
+		<input type="text" id="inputTitle" class="superInput" placeholder="Service Title">
 		<input type="text" id="inputPassword" class="superInput" placeholder="Password">
 		<div class="btn-container btn-submit">
-			<button type="submit" id="createButton" class="btn btn-create fontawesome-save"> Save</button>
+			<button type="button" id="backButton" class="btn btn-action fontawesome-arrow-left"> Back</button>
+			<button type="submit" id="createButton" class="btn btn-create fontawesome-plus"> Add</button>
 		</div>
 	</script>
-
+	<div id="superbarContainer">
 	<div id="superbar" class="small"></div>
+	<div id="superAlert"></div>
+	</div>
 
 	<script id="password-data-template" type="text/x-handlebars-template">
 	<div class="passwordView">

@@ -10,7 +10,8 @@ require.config({
 		'PasswordView': 'views/PasswordView',
 		'PasswordListView': 'views/PasswordListView',
 		'EditView': 'views/EditView',
-		'SuperbarView': 'views/SuperbarView',
+		'SuperAddView': 'views/SuperAddView',
+		'SuperSearchView': 'views/SuperSearchView',
 		'strength-minified': 'handlebar-helpers/strength-one-letter'
 	},
 	shim: {
