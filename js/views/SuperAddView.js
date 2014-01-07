@@ -1,4 +1,9 @@
-define(['backbone','handlebars','PasswordList','PasswordListView','allPasswords'], function(Backbone, Handlebars, PasswordList, PasswordListView, allPasswords){
+define([
+	'backbone',
+	'handlebars',
+	'PasswordList',
+	'PasswordListView',
+	'allPasswords'], function(Backbone, Handlebars, PasswordList, PasswordListView, allPasswords){
 	var SuperAddView = Backbone.View.extend({
 
 		template: Handlebars.default.compile($('#password-create-template').html()),
@@ -10,6 +15,7 @@ define(['backbone','handlebars','PasswordList','PasswordListView','allPasswords'
 		events: {
 			'click #createButton': 'createPassword',
 			'click #backButton': 'renderSearch',
+			'keyup #inputPassword': 'focusPassword',
 			'keyup': 'keyUp'
 		},
 
@@ -51,6 +57,23 @@ define(['backbone','handlebars','PasswordList','PasswordListView','allPasswords'
 
 			}, 4000);
 
+		}, 
+
+		focusPassword: function(){
+			var inputPassword = this.$el.find('#inputPassword').val().length,
+				strengthBar = this.$el.find('#strengthIndicator');
+
+			if (inputPassword <= 0) {
+				strengthBar.attr('class', '');
+			} else if(inputPassword < 8) {
+				strengthBar.attr('class','Weak');
+			} else if (inputPassword >= 8 && inputPassword < 14) {
+				strengthBar.attr('class','Medium');
+			} else if (inputPassword >= 14 && inputPassword < 20) {
+				strengthBar.attr('class','Strong');
+			} else if (inputPassword >= 20) {
+				strengthBar.attr('class','Best');
+			}
 		},
 
 		keyUp: function(e){

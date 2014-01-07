@@ -3,7 +3,7 @@
 /* fontawesome */
 /* line 16, ../sass/main.scss */
 [class*="fontawesome-"]:before {
-  font-family: "FontAwesome", sans-serif;
+  font-family: 'FontAwesome', sans-serif;
 }
 
 /* line 36, ../sass/main.scss */
@@ -38,7 +38,7 @@ nav .logo-toggle {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 38, ../../Resources/Programs/compass/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .container:after {
   content: "";
   display: table;
@@ -48,7 +48,7 @@ nav .logo-toggle {
 /* line 63, ../sass/main.scss */
 #superbarContainer {
   padding: 3em 0 2em 0;
-  border-bottom: 1px dashed #cccccc;
+  border-bottom: 1px dashed #ccc;
 }
 
 /* line 69, ../sass/main.scss */
@@ -72,17 +72,17 @@ nav .logo-toggle {
   -moz-box-shadow: 0px 0px 3px #999999;
   box-shadow: 0px 0px 3px #999999;
 }
-/* line 96, ../sass/main.scss */
+/* line 85, ../sass/main.scss */
 #superbar.small {
   height: 50px;
 }
-/* line 101, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 #superbar.small .btn-container.actions {
   top: 0;
   right: 0;
   position: absolute;
 }
-/* line 106, ../sass/main.scss */
+/* line 95, ../sass/main.scss */
 #superbar.small .btn-container.actions:after {
   content: '';
   top: 20%;
@@ -91,36 +91,36 @@ nav .logo-toggle {
   position: absolute;
   border-right: 1px solid #666666;
 }
-/* line 116, ../sass/main.scss */
+/* line 105, ../sass/main.scss */
 #superbar.small .btn-container .btn-search {
   height: 46px;
   margin: 2px 0;
   line-height: 40px;
 }
-/* line 120, ../sass/main.scss */
+/* line 109, ../sass/main.scss */
 #superbar.small .btn-container .btn-search:hover {
   color: #27ae60;
 }
-/* line 123, ../sass/main.scss */
+/* line 112, ../sass/main.scss */
 #superbar.small .btn-container .btn-search.green {
   color: #27ae60;
 }
-/* line 128, ../sass/main.scss */
+/* line 117, ../sass/main.scss */
 #superbar.small .btn-container .btn-add {
   background: #16a085;
   color: #fff;
 }
-/* line 132, ../sass/main.scss */
+/* line 121, ../sass/main.scss */
 #superbar.small .btn-container .btn-add:hover {
   background: #1abc9c;
   color: #0e6252;
 }
-/* line 140, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
 #superbar.big {
-  height: 175px;
+  height: 195px;
   padding-top: 10px;
 }
-/* line 144, ../sass/main.scss */
+/* line 133, ../sass/main.scss */
 #superbar.big .btn-container {
   width: 100%;
   float: left;
@@ -130,12 +130,12 @@ nav .logo-toggle {
   display: block;
   padding: 1em 0;
 }
-/* line 153, ../sass/main.scss */
+/* line 142, ../sass/main.scss */
 #superbar.big .btn-create {
   width: 21.05263%;
   float: right;
   margin-right: 0;
-  #margin-left: -1em;
+  *margin-left: -1em;
   display: inline;
   color: #fff;
   height: 40px;
@@ -143,12 +143,12 @@ nav .logo-toggle {
   line-height: 40px;
   margin-right: 1em;
 }
-/* line 162, ../sass/main.scss */
+/* line 151, ../sass/main.scss */
 #superbar.big .btn-create:hover {
   background: #1abc9c;
   color: #0e6252;
 }
-/* line 170, ../sass/main.scss */
+/* line 159, ../sass/main.scss */
 #superbar.big .btn-action {
   width: 100px;
   height: 40px;
@@ -156,20 +156,66 @@ nav .logo-toggle {
   line-height: 40px;
   text-align: left;
 }
-/* line 178, ../sass/main.scss */
+/* line 167, ../sass/main.scss */
 #superbar.big #inputTitle {
   font-weight: bold;
   font-size: 1.4em;
   text-indent: 0.8em;
   position: relative;
 }
-/* line 185, ../sass/main.scss */
+/* line 174, ../sass/main.scss */
 #superbar.big #inputPassword {
   font-family: 'Courier New';
   color: #1abc9c;
   font-size: 1.2em;
 }
-/* line 192, ../sass/main.scss */
+/* line 180, ../sass/main.scss */
+#superbar.big #strengthLog {
+  float: left;
+  height: 8px;
+  background: #4d4d4d;
+  width: 90%;
+  margin: 5px 5%;
+  padding: 0;
+  overflow: hidden;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+}
+/* line 193, ../sass/main.scss */
+#superbar.big #strengthIndicator {
+  float: left;
+  height: 8px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: width 0.3s ease-in;
+  -moz-transition: width 0.3s ease-in;
+  -o-transition: width 0.3s ease-in;
+  transition: width 0.3s ease-in;
+}
+/* line 201, ../sass/main.scss */
+#superbar.big #strengthIndicator.Weak {
+  width: 15%;
+  background: #e74c3c;
+}
+/* line 205, ../sass/main.scss */
+#superbar.big #strengthIndicator.Medium {
+  width: 40%;
+  background: #f1c40f;
+}
+/* line 209, ../sass/main.scss */
+#superbar.big #strengthIndicator.Strong {
+  width: 70%;
+  background: #27ae60;
+}
+/* line 213, ../sass/main.scss */
+#superbar.big #strengthIndicator.Best {
+  width: 100%;
+  background: #9b59b6;
+}
+/* line 220, ../sass/main.scss */
 #superbar .superInput {
   height: 40px;
   border: none;
@@ -187,7 +233,7 @@ nav .logo-toggle {
   display: inline;
 }
 
-/* line 207, ../sass/main.scss */
+/* line 235, ../sass/main.scss */
 .btn {
   width: 50px;
   height: 50px;
@@ -196,7 +242,7 @@ nav .logo-toggle {
   font-size: 1.2em;
   outline-color: #2ecc71;
 }
-/* line 217, ../sass/main.scss */
+/* line 245, ../sass/main.scss */
 .btn.btn-action {
   float: left;
   margin: 0;
@@ -204,35 +250,35 @@ nav .logo-toggle {
   color: #666666;
   outline: none;
 }
-/* line 224, ../sass/main.scss */
+/* line 252, ../sass/main.scss */
 .btn.btn-action:hover {
   color: #e3e9eb;
 }
-/* line 229, ../sass/main.scss */
+/* line 257, ../sass/main.scss */
 .btn.btn-action.yellow:hover {
   color: #f1c40f;
 }
-/* line 232, ../sass/main.scss */
+/* line 260, ../sass/main.scss */
 .btn.btn-action.red:hover {
   color: #e74c3c;
 }
-/* line 235, ../sass/main.scss */
+/* line 263, ../sass/main.scss */
 .btn.btn-action.teal:hover {
   color: #1abc9c;
 }
-/* line 238, ../sass/main.scss */
+/* line 266, ../sass/main.scss */
 .btn.btn-action.green:hover {
   color: #2ecc71;
 }
-/* line 241, ../sass/main.scss */
+/* line 269, ../sass/main.scss */
 .btn.btn-save {
   background: #1abc9c;
 }
-/* line 244, ../sass/main.scss */
+/* line 272, ../sass/main.scss */
 .btn.btn-save:hover {
   background: #148f77;
 }
-/* line 248, ../sass/main.scss */
+/* line 276, ../sass/main.scss */
 .btn.btn-block {
   color: #fff;
   font-size: 1em;
@@ -242,22 +288,22 @@ nav .logo-toggle {
   display: inline;
 }
 
-/* line 256, ../sass/main.scss */
+/* line 284, ../sass/main.scss */
 #passwordContainer {
   margin-top: 3em;
 }
 
-/* line 260, ../sass/main.scss */
+/* line 288, ../sass/main.scss */
 .passwordView {
   background: #fff;
   margin: 3em 0;
   position: relative;
-  border-bottom: 2px solid #cccccc;
+  border-bottom: 2px solid #ccc;
   -webkit-box-shadow: 0px 0px 2px #999999;
   -moz-box-shadow: 0px 0px 2px #999999;
   box-shadow: 0px 0px 2px #999999;
 }
-/* line 268, ../sass/main.scss */
+/* line 296, ../sass/main.scss */
 .passwordView input {
   width: 100%;
   padding: 0.5em 0;
@@ -268,11 +314,11 @@ nav .logo-toggle {
   outline-color: #2ecc71;
   background: #404040;
 }
-/* line 282, ../sass/main.scss */
+/* line 310, ../sass/main.scss */
 .passwordView .service {
   font-size: 1.2em;
 }
-/* line 286, ../sass/main.scss */
+/* line 314, ../sass/main.scss */
 .passwordView .strength-bar {
   color: #FFF;
   height: 20px;
@@ -283,27 +329,27 @@ nav .logo-toggle {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 296, ../sass/main.scss */
+/* line 324, ../sass/main.scss */
 .passwordView .strength-bar .Weak {
   background: #e74c3c;
   width: 25%;
 }
-/* line 300, ../sass/main.scss */
+/* line 328, ../sass/main.scss */
 .passwordView .strength-bar .Medium {
   background: #f1c40f;
   width: 50%;
 }
-/* line 304, ../sass/main.scss */
+/* line 332, ../sass/main.scss */
 .passwordView .strength-bar .Strong {
   background: #2ecc71;
   width: 75%;
 }
-/* line 308, ../sass/main.scss */
+/* line 336, ../sass/main.scss */
 .passwordView .strength-bar .Best {
   background: #9b59b6;
   width: 100%;
 }
-/* line 314, ../sass/main.scss */
+/* line 342, ../sass/main.scss */
 .passwordView .password {
   background: #333333;
   color: #1abc9c;
@@ -316,7 +362,7 @@ nav .logo-toggle {
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 325, ../sass/main.scss */
+/* line 353, ../sass/main.scss */
 .passwordView .passwordInfo {
   padding-top: 3em;
   *zoom: 1;
@@ -325,17 +371,17 @@ nav .logo-toggle {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 38, ../../Resources/Programs/compass/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .passwordView .passwordInfo:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 329, ../sass/main.scss */
+/* line 357, ../sass/main.scss */
 .passwordView .passwordInfo h3 {
   margin-bottom: 0.3em;
 }
-/* line 332, ../sass/main.scss */
+/* line 360, ../sass/main.scss */
 .passwordView .passwordActions {
   height: 50px;
   padding-bottom: 3px;
@@ -346,13 +392,13 @@ nav .logo-toggle {
   display: inline;
   float: right;
   margin-right: 0;
-  #margin-left: -1em;
+  *margin-left: -1em;
   display: inline;
   -webkit-box-shadow: inset 0px -2px 2px #1a1a1a;
   -moz-box-shadow: inset 0px -2px 2px #1a1a1a;
   box-shadow: inset 0px -2px 2px #1a1a1a;
 }
-/* line 341, ../sass/main.scss */
+/* line 369, ../sass/main.scss */
 .passwordView .passwordInputs {
   padding: 3em 0 1em 0;
   font-size: 1.5em;
@@ -362,14 +408,14 @@ nav .logo-toggle {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 38, ../../Resources/Programs/compass/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .passwordView .passwordInputs:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 350, ../sass/main.scss */
+/* line 378, ../sass/main.scss */
 span.strength-ribbon {
   width: 2em;
   height: 2em;
@@ -387,7 +433,7 @@ span.strength-ribbon {
   -o-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
-/* line 364, ../sass/main.scss */
+/* line 392, ../sass/main.scss */
 span.strength-ribbon:after {
   content: '';
   top: 100%;
@@ -399,41 +445,41 @@ span.strength-ribbon:after {
   border-left: 1em solid transparent;
   border-right: 1em solid transparent;
 }
-/* line 377, ../sass/main.scss */
+/* line 405, ../sass/main.scss */
 span.strength-ribbon.Weak {
   background: #e74c3c;
 }
-/* line 378, ../sass/main.scss */
+/* line 406, ../sass/main.scss */
 span.strength-ribbon.Weak:after {
   border-top-color: #e74c3c;
 }
-/* line 380, ../sass/main.scss */
+/* line 408, ../sass/main.scss */
 span.strength-ribbon.Medium {
   background: #f1c40f;
 }
-/* line 381, ../sass/main.scss */
+/* line 409, ../sass/main.scss */
 span.strength-ribbon.Medium:after {
   border-top-color: #f1c40f;
 }
-/* line 383, ../sass/main.scss */
+/* line 411, ../sass/main.scss */
 span.strength-ribbon.Strong {
   background: #2ecc71;
 }
-/* line 384, ../sass/main.scss */
+/* line 412, ../sass/main.scss */
 span.strength-ribbon.Strong:after {
   border-top-color: #2ecc71;
 }
-/* line 386, ../sass/main.scss */
+/* line 414, ../sass/main.scss */
 span.strength-ribbon.Best {
   background: #9b59b6;
 }
-/* line 387, ../sass/main.scss */
+/* line 415, ../sass/main.scss */
 span.strength-ribbon.Best:after {
   border-top-color: #9b59b6;
 }
 
 @media (min-width: 40em) {
-  /* line 396, ../sass/main.scss */
+  /* line 424, ../sass/main.scss */
   .container {
     max-width: 39em;
     padding-left: 1em;
@@ -441,21 +487,21 @@ span.strength-ribbon.Best:after {
     margin-left: auto;
     margin-right: auto;
   }
-  /* line 38, ../../Resources/Programs/compass/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .container:after {
     content: "";
     display: table;
     clear: both;
   }
 
-  /* line 404, ../sass/main.scss */
+  /* line 432, ../sass/main.scss */
   .btn.btn-block {
     width: 21.05263%;
     float: right;
     margin-right: 0;
   }
 
-  /* line 410, ../sass/main.scss */
+  /* line 438, ../sass/main.scss */
   .passwordView .service {
     font-size: 1.5em;
   }

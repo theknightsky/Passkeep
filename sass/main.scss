@@ -80,17 +80,6 @@ nav{
 	background: $black;
 	position: relative;
 
-	// &:after{
-	// 	content: '';
-	// 	display: block;
-	// 	position: absolute;
-	// 	width: 100%;
-	// 	top: 150%;
-	// 	left: 0;
-	// 	right: 0;
-	// 	border-bottom: 1px dashed #ccc;
-	// }
-
 	@include box-shadow(-0px -0px 3px #999);
 
 	&.small{
@@ -138,7 +127,7 @@ nav{
 	}
 
 	&.big{
-		height: 175px;
+		height: 195px;
 		padding-top: 10px;
 
 		.btn-container{
@@ -186,6 +175,45 @@ nav{
 			font-family: 'Courier New';
 			color: $teal;
 			font-size: 1.2em;
+		}
+
+		#strengthLog{
+			float: left;			
+			height: 8px;
+			background: lighten($black, 10%);
+			width: 90%;
+			margin: 5px 5%;
+			padding: 0;
+			overflow: hidden;
+
+			@include border-radius(8px);
+
+		}
+
+		#strengthIndicator{
+			float: left;
+			height: 8px;
+			color: #fff;
+			text-align: center;
+
+			@include transition(width 0.3s ease-in);
+
+			&.Weak{
+				width: 15%;
+				background:$red;
+			}
+			&.Medium{
+				width: 40%;
+				background:$yellow;
+			}
+			&.Strong{
+				width: 70%;
+				background:$dark-green;
+			}
+			&.Best{
+				width: 100%;
+				background:$purple;
+			}
 		}
 	}
 
