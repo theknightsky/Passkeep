@@ -1,4 +1,9 @@
-define(['backbone', 'handlebars','PasswordList','PasswordListView','allPasswords'], function(Backbone,Handlebars,PasswordList,PasswordListView,allPasswords){
+define([
+	'backbone',
+	'handlebars',
+	'PasswordList',
+	'PasswordListView',
+	'allPasswords'], function(Backbone,Handlebars,PasswordList,PasswordListView,allPasswords){
 
 	var SuperSearchView = Backbone.View.extend({
 
@@ -16,10 +21,13 @@ define(['backbone', 'handlebars','PasswordList','PasswordListView','allPasswords
 
 		searchResult: [],
 
-		findMatch: function(model){
+		findMatch: function(){
 
 			var searchValue = this.$el.find('#inputCreate').val();
+			this.searchResult = [];
 
+			this.collection.each(function(model){
+				
 				if (searchValue.length >=2) {
 				
 					if (model.get('service').toLowerCase().replace(/\s+/g, '').indexOf(searchValue.toLowerCase().replace(/\s+/g, '')) >= 0) {
@@ -34,26 +42,13 @@ define(['backbone', 'handlebars','PasswordList','PasswordListView','allPasswords
 					}
 
 				}
-		},
-
-		searchPassword: function(e){
-			e.preventDefault();
-
-			var searchValue = this.$el.find('#inputCreate').val();
-			this.searchResult = [];
-
-			this.collection.each(function(model){
-				
-				this.findMatch(model);
 
 			}, this);
-
-			return this.searchResult;
 
 		},
 
 		loadResult: function(e){
-			this.searchPassword(e);
+			this.findMatch();
 
 			if (this.searchResult.length == 0) {
 
