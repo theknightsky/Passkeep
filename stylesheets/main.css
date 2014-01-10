@@ -354,10 +354,10 @@ nav .logo-toggle {
   padding: 0.5em 0;
   margin: 0.5em 0;
   border: none;
-  color: #1abc9c;
+  color: #444;
   text-indent: 0.5em;
   outline-color: #2ecc71;
-  background: #404040;
+  background: #ddd;
 }
 /* line 353, ../sass/main.scss */
 .passwordView .service {

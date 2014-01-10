@@ -10,6 +10,7 @@ var EditView = Backbone.View.extend({
 	initialize: function(){this.render();},
 	render: function(){
 		this.$el.html(this.template(this.model.toJSON()));
+		this.$el.find('#passwordTitle').focus();
 
 		return this;
 	}
