@@ -1,0 +1,105 @@
+//---- SIDEMENU STYLES ----//
+@import "compass/css3";
+
+//---- COLORS ----//
+$white: darken(#ecf0f1, 3%);
+$light-gray: #bdc3c7;
+$yellow: #f1c40f;
+$red: #e74c3c;
+$green: #2ecc71;
+$dark-green: #27ae60;
+$black: #333;
+$midnight: darken($black, 10%);
+$teal: #1abc9c;
+$dark-teal: #16a085;
+$purple: #9b59b6;
+
+#full-wrap{
+
+	&::after{
+		position: absolute;
+		content: '';
+		top: 0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		z-index: 9000;
+		display: block;
+		visibility: hidden;
+		cursor: pointer;
+		background: rgba(#000, 0.3);
+	}
+
+	#main-menu{
+		position: fixed;
+		top: 60px;
+		left: -320px;
+		color: #777;
+		height: 100%;
+		width: 320px;
+		z-index: 9999;
+		visibility: hidden;
+		text-align: center;
+		background: $black;
+		border-top: 5px solid $green;
+
+		// @include box-shadow(inset -5px -0px 15px #222)
+	}
+
+	#main-nav{
+
+	}
+
+	#content-wrap{
+		height: 100%;
+		position: relative;
+
+	}
+	
+}
+
+
+#full-wrap.side-menu{
+	#main-menu{
+		visibility: visisble;
+		@include transition(all 0.3s);
+	}
+
+	#main-nav{
+		left: 0;
+		@include transition(all 0.2s ease-in);
+	}
+
+	#content-wrap{
+		margin-left: 0;
+		@include transition(all 0.2s ease-in);
+
+	}
+}
+
+#full-wrap.side-menu.side-menu-open{
+
+	&::after{
+		visibility: visible;
+		height: 100%;
+		width: 100%;
+		@include transition(opacity 0.4s);
+	}
+
+	#main-menu{
+		left: 0;
+		visibility: visible;
+		@include transition(all 0.3s);
+	}
+
+	#main-nav{
+		// left: 300px;
+		@include transition(all 0.2s ease-in);
+	}
+
+	#content-wrap{
+		// margin-left: 300px;
+		@include transition(margin-left 0.2s ease-in);
+	}
+
+}

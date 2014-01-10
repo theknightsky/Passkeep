@@ -12,7 +12,8 @@ require.config({
 		'EditView': 'views/EditView',
 		'SuperAddView': 'views/SuperAddView',
 		'SuperSearchView': 'views/SuperSearchView',
-		'strength-minified': 'handlebar-helpers/strength-one-letter'
+		'strength-minified': 'handlebar-helpers/strength-one-letter',
+		'classie': 'classie'
 	},
 	shim: {
 		'backbone': {

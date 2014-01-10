@@ -37,6 +37,12 @@ body{
 	padding: 0;
 	font-family: 'Source Sans Pro';
 	background: $white;
+	height: 100%;
+}
+
+#full-wrap{
+	position: relative;
+	height: 100%;
 }
 
 nav{
@@ -47,14 +53,16 @@ nav{
 	padding: 5px 0;
 	background: $black;
 	position: fixed;
-	z-index: 9999;
+	z-index: 8888;
 
 	.logo-toggle{
 		max-height: 50px;
+		cursor: pointer;
 	}
 }
 
 .container{
+	height: 100%;
 	padding-top: 4em;
 	@include container;
 	// @include susy-grid-background;
@@ -181,12 +189,12 @@ nav{
 			float: left;			
 			height: 8px;
 			background: lighten($black, 10%);
-			width: 90%;
-			margin: 5px 5%;
+			width: 94%;
+			margin: 5px 3%;
 			padding: 0;
 			overflow: hidden;
 
-			@include border-radius(8px);
+			// @include border-radius(8px);
 
 		}
 
@@ -283,6 +291,7 @@ nav{
 
 #passwordContainer{
 	margin-top: 3em;
+	height: 100%;
 }
 
 .passwordView {
@@ -440,3 +449,7 @@ span.strength-ribbon{
 		}
 	}
 }
+
+//---- IMPORTED STYLESHEETS ----//
+
+@import "sideMenu.css";

@@ -7,15 +7,22 @@
 	<link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>
-	
-<nav>
-	<img class="logo-toggle" src="img/logo-toggle.png" alt="Passkeep">
+<div id="full-wrap" class="">
+
+<div id="main-menu" class="main-menu">
+	<h1>Passkeep</h1>
+</div>
+
+<div id="content-wrap">
+
+<nav id="main-nav">
+	<img id="menu-toggle" class="logo-toggle" src="img/logo-toggle.png" alt="Passkeep">
 </nav>
 
-<div class="container">
+<div id="container" class="container">
 
 	<script id="password-search-template" type="text/x-handlebars-template">
-		<input type="text" id="inputCreate" class="superInput" placeholder="Find an existing password">
+		<input type="text" id="inputCreate" class="superInput" placeholder="Search passwords">
 		<div class="btn-container actions">
 		<button type="button" id="searchButton" class="btn btn-action btn-search fontawesome-search"></button>
 		<button type="button" id="startCreate" class="btn btn-action btn-add fontawesome-plus"></button>
@@ -69,7 +76,13 @@
 	<div class="passwordContainer"></div>
 
 </div>
+<!-- End #container -->
 
+</div>
+<!-- End #content-wrap -->
+
+</div>
+<!-- End full-wrap -->
 <script src="js/libs/require.js" data-main="js/main"></script>
 </body>
 </html>
