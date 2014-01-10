@@ -10,11 +10,15 @@ define(['config'], function(){
 		'classie',
 		'sideMenu'], function(PasswordModel,PasswordList,PasswordView,PasswordListView,SuperSearchView,allPasswords,classie){
 
-		allPasswords.sort();
-		var superSearchView = new SuperSearchView({collection: allPasswords});
-		var passwordListView = new PasswordListView({collection: allPasswords});
+		var App = (function(){
 
-		$('#superbar').html(superSearchView.el);
+			allPasswords.sort();
+			var superSearchView = new SuperSearchView({collection: allPasswords});
+			var passwordListView = new PasswordListView({collection: allPasswords});
+
+			$('#superbar').html(superSearchView.el);
+
+		})();
 		
 	});
 });

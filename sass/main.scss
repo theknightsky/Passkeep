@@ -61,6 +61,40 @@ nav{
 	}
 }
 
+#main-menu{
+	position: fixed;
+	top: 0;
+	left: -230px;
+	color: #777;
+	height: 100%;
+	width: 230px;
+	z-index: 9999;
+	visibility: hidden;
+	background: $black;
+	// border-top: 5px solid $green;
+
+	@include box-shadow( 0px -0px 15px #222);
+
+	ul{margin: 0;padding: 0;}
+
+	ul li{
+		height: 60px;
+		line-height: 60px;
+		padding: 0 1em;
+		font-size: 1.2em;
+		list-style-type: none;
+		cursor: pointer;
+		&:hover{
+			background: darken($black,2%);
+		}
+	}
+
+	ul li.selected{
+		background: $dark-teal;
+		color: #fff;
+	}
+}
+
 .container{
 	height: 100%;
 	padding-top: 4em;
@@ -430,10 +464,17 @@ span.strength-ribbon{
 @include at-breakpoint(40em 8){
 	$total-columns: 8;
 	$container-style: magic;
+	#main-menu{
+		width: 300px;
+		left: -300px;
+	}
+
 	.container{
 		@include container;
 		// @include susy-grid-background;
 	}
+
+
 	.btn{
 		// &.btn-action{
 		// 	@include span-columns(1, 8);

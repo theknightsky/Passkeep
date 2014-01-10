@@ -1,6 +1,6 @@
 /* line 19, ../sass/sideMenu.scss */
 #full-wrap::after {
-  position: absolute;
+  position: fixed;
   content: '';
   top: 0;
   left: 0;
@@ -13,26 +13,12 @@
   background: rgba(0, 0, 0, 0.3);
 }
 /* line 33, ../sass/sideMenu.scss */
-#full-wrap #main-menu {
-  position: fixed;
-  top: 60px;
-  left: -320px;
-  color: #777;
-  height: 100%;
-  width: 320px;
-  z-index: 9999;
-  visibility: hidden;
-  text-align: center;
-  background: #333333;
-  border-top: 5px solid #2ecc71;
-}
-/* line 53, ../sass/sideMenu.scss */
 #full-wrap #content-wrap {
   height: 100%;
   position: relative;
 }
 
-/* line 63, ../sass/sideMenu.scss */
+/* line 43, ../sass/sideMenu.scss */
 #full-wrap.side-menu #main-menu {
   visibility: visisble;
   -webkit-transition: all 0.3s;
@@ -40,7 +26,7 @@
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 68, ../sass/sideMenu.scss */
+/* line 48, ../sass/sideMenu.scss */
 #full-wrap.side-menu #main-nav {
   left: 0;
   -webkit-transition: all 0.2s ease-in;
@@ -48,7 +34,7 @@
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 73, ../sass/sideMenu.scss */
+/* line 53, ../sass/sideMenu.scss */
 #full-wrap.side-menu #content-wrap {
   margin-left: 0;
   -webkit-transition: all 0.2s ease-in;
@@ -57,7 +43,7 @@
   transition: all 0.2s ease-in;
 }
 
-/* line 82, ../sass/sideMenu.scss */
+/* line 62, ../sass/sideMenu.scss */
 #full-wrap.side-menu.side-menu-open::after {
   visibility: visible;
   height: 100%;
@@ -67,7 +53,7 @@
   -o-transition: opacity 0.4s;
   transition: opacity 0.4s;
 }
-/* line 89, ../sass/sideMenu.scss */
+/* line 69, ../sass/sideMenu.scss */
 #full-wrap.side-menu.side-menu-open #main-menu {
   left: 0;
   visibility: visible;
@@ -76,14 +62,14 @@
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 95, ../sass/sideMenu.scss */
+/* line 75, ../sass/sideMenu.scss */
 #full-wrap.side-menu.side-menu-open #main-nav {
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-/* line 100, ../sass/sideMenu.scss */
+/* line 80, ../sass/sideMenu.scss */
 #full-wrap.side-menu.side-menu-open #content-wrap {
   -webkit-transition: margin-left 0.2s ease-in;
   -moz-transition: margin-left 0.2s ease-in;

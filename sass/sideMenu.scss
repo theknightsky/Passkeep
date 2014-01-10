@@ -17,7 +17,7 @@ $purple: #9b59b6;
 #full-wrap{
 
 	&::after{
-		position: absolute;
+		position: fixed;
 		content: '';
 		top: 0;
 		left:0;
@@ -28,26 +28,6 @@ $purple: #9b59b6;
 		visibility: hidden;
 		cursor: pointer;
 		background: rgba(#000, 0.3);
-	}
-
-	#main-menu{
-		position: fixed;
-		top: 60px;
-		left: -320px;
-		color: #777;
-		height: 100%;
-		width: 320px;
-		z-index: 9999;
-		visibility: hidden;
-		text-align: center;
-		background: $black;
-		border-top: 5px solid $green;
-
-		// @include box-shadow(inset -5px -0px 15px #222)
-	}
-
-	#main-nav{
-
 	}
 
 	#content-wrap{
